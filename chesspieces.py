@@ -1,21 +1,6 @@
-from abc import ABC, abstractmethod
 from chessboard import Chessboard
 from typing import List
-
-
-class Figure(ABC):
-    def __init__(self, field: str) -> None:
-        self.field = field
-        self.available_moves: List[str] = []
-
-    @abstractmethod
-    def list_available_moves(self):
-        pass
-
-    def validate_move(self, dest_field: str) -> bool:
-        if dest_field in self.available_moves:
-            return True
-        return False
+from figure import Figure
 
 
 class King(Figure):
@@ -88,9 +73,7 @@ class Rook(Figure):
     def list_available_moves(self) -> List[str]:
         chessboard = Chessboard()
 
-        print(chessboard.x_size)
         """ Movement horizontally """
-
         for x_field in chessboard.x_size:
             if x_field != self.field[0]:
                 self.available_moves.append(x_field + self.field[1])
