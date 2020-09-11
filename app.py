@@ -13,9 +13,9 @@ def available_fields(
 ) -> Tuple[Any, int]:
 
     try:
-        error: str
-        moves: List[str]
-        error_code: int
+        error: str = None
+        moves: List[str] = []
+        error_code: int = None
 
         chessboard = Chessboard()
 
@@ -30,7 +30,7 @@ def available_fields(
 
                 moves = obj.list_available_moves()
 
-            except:
+            except AttributeError:
                 error = "Figure does not exist."
                 error_code = 404
 
@@ -47,8 +47,9 @@ def available_fields(
                 )
 
             if dest_field:
-                dest_field = dest_field.upper()
 
+                dest_field = dest_field.upper()
+                move: str
                 if chessboard.validate_field(dest_field):
 
                     if obj.validate_move(dest_field):
