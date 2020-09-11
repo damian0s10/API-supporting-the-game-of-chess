@@ -10,4 +10,3 @@ def test_valid_dest_field():
     assert r["error"] == None
     assert r["destField"] == "C5"
     assert r["move"] == "valid"
-    

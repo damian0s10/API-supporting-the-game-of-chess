@@ -10,4 +10,3 @@ def test_field_doesnt_exist():
     assert r["error"] == "Field does not exist."
     assert r["figure"] == "queen"
     assert r["availableMoves"] == []
-    

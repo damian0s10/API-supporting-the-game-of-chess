@@ -10,9 +10,6 @@ def test_pawn_available_fields():
     assert r["error"] == None
     assert r["currentField"] == "B2"
 
-    available_moves = [
-        "B3",
-        "B4"
-    ]
+    available_moves = ["B3", "B4"]
 
     assert r["availableMoves"].sort() == available_moves.sort()

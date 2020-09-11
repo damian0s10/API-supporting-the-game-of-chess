@@ -10,11 +10,6 @@ def test_knight_available_fields():
     assert r["error"] == None
     assert r["currentField"] == "A5"
 
-    available_moves = [
-        "B7",
-        "B3",
-        "C4",
-        "C6"
-    ]
+    available_moves = ["B7", "B3", "C4", "C6"]
 
     assert r["availableMoves"].sort() == available_moves.sort()

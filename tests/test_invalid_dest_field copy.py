@@ -10,4 +10,3 @@ def test_valid_dest_field():
     assert r["error"] == "Current move is not permitted."
     assert r["destField"] == "E5"
     assert r["move"] == "invalid"
-    

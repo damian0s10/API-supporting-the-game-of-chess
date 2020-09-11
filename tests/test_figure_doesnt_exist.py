@@ -10,4 +10,3 @@ def test_figure_doesnt_exist():
     assert r["error"] == "Figure does not exist."
     assert r["figure"] == "knigh"
     assert r["availableMoves"] == []
-    

@@ -31,7 +31,7 @@ def test_knight_available_fields():
         "D4",
         "C3",
         "B2",
-        "A1"
+        "A1",
     ]
 
     assert r["availableMoves"].sort() == available_moves.sort()
