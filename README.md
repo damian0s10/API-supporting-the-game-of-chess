@@ -3,4 +3,5 @@
 How to run:
 
 docker image build -t chess .
+
 docker run -p 5000:5000 chess
