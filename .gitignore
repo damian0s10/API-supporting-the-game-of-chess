@@ -1,4 +1,2 @@
 .mypy_cache
 .pytest_cache
-Pipfile
-Pipfile.lock
