@@ -4,7 +4,7 @@ from typing import List
 
 class Figure(ABC):
     def __init__(self, field: str) -> None:
-        self.field = field
+        self.field: str = field
         self.available_moves: List[str] = []
 
     @abstractmethod

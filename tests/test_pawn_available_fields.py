@@ -7,7 +7,7 @@ def test_pawn_available_fields():
     r = resp.json()
     assert resp.status_code == 200
     assert r["figure"] == "pawn"
-    assert r["error"] == None
+    assert r["error"] is None
     assert r["currentField"] == "B2"
 
     available_moves = ["B3", "B4"]

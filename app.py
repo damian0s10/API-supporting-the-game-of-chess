@@ -15,19 +15,15 @@ def available_fields(
     try:
         error: str = None
         moves: List[str] = []
-        error_code: int = None
+        error_code: int = 200
 
-        chessboard = Chessboard()
-
-        current_field = current_field.upper()
+        chessboard: Chessboard = Chessboard()
+        current_field: str = current_field.upper()
 
         if chessboard.validate_field(current_field):
-
             try:
                 class_name = getattr(chesspieces, chess_figure.capitalize())
-
                 obj = class_name(current_field)
-
                 moves = obj.list_available_moves()
 
             except AttributeError:
@@ -47,11 +43,10 @@ def available_fields(
                 )
 
             if dest_field:
-
                 dest_field = dest_field.upper()
                 move: str
-                if chessboard.validate_field(dest_field):
 
+                if chessboard.validate_field(dest_field):
                     if obj.validate_move(dest_field):
                         move = "valid"
 

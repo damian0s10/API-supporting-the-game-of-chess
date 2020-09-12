@@ -7,6 +7,6 @@ def test_valid_dest_field():
     r = resp.json()
     assert resp.status_code == 200
     assert r["currentField"] == "C2"
-    assert r["error"] == None
+    assert r["error"] is None
     assert r["destField"] == "C5"
     assert r["move"] == "valid"

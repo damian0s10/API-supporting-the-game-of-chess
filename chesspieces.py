@@ -5,7 +5,7 @@ from figure import Figure
 
 class King(Figure):
     def list_available_moves(self) -> List[str]:
-        chessboard = Chessboard()
+        chessboard: Chessboard = Chessboard()
 
         x_index: int = chessboard.x_size.index(self.field[0])
         y_index: int = chessboard.y_size.index(self.field[1])
@@ -29,7 +29,7 @@ class King(Figure):
 
 class Queen(Figure):
     def list_available_moves(self) -> List[str]:
-        chessboard = Chessboard()
+        chessboard: Chessboard = Chessboard()
 
         x_index: int = chessboard.x_size.index(self.field[0])
         y_index: int = chessboard.y_size.index(self.field[1])
@@ -71,7 +71,7 @@ class Queen(Figure):
 
 class Rook(Figure):
     def list_available_moves(self) -> List[str]:
-        chessboard = Chessboard()
+        chessboard: Chessboard = Chessboard()
 
         """ Movement horizontally """
         for x_field in chessboard.x_size:
@@ -88,7 +88,7 @@ class Rook(Figure):
 
 class Bishop(Figure):
     def list_available_moves(self) -> List[str]:
-        chessboard = Chessboard()
+        chessboard: Chessboard = Chessboard()
 
         x_index: int = chessboard.x_size.index(self.field[0])
         y_index: int = chessboard.y_size.index(self.field[1])
@@ -120,7 +120,7 @@ class Bishop(Figure):
 
 class Knight(Figure):
     def list_available_moves(self) -> List[str]:
-        chessboard = Chessboard()
+        chessboard: Chessboard = Chessboard()
 
         x_index: int = chessboard.x_size.index(self.field[0])
         y_index: int = chessboard.y_size.index(self.field[1])
@@ -167,8 +167,10 @@ class Knight(Figure):
 
 
 class Pawn(Figure):
+    """ It was assumed that the pawn was started at the bottom of the board """
+
     def list_available_moves(self) -> List[str]:
-        chessboard = Chessboard()
+        chessboard: Chessboard = Chessboard()
 
         """ Can move forward one square """
         short_move: str = self.field[0] + str(int(self.field[1]) + 1)

@@ -7,7 +7,7 @@ def test_knight_available_fields():
     r = resp.json()
     assert resp.status_code == 200
     assert r["figure"] == "knight"
-    assert r["error"] == None
+    assert r["error"] is None
     assert r["currentField"] == "A5"
 
     available_moves = ["B7", "B3", "C4", "C6"]
